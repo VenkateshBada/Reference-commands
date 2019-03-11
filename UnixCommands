@@ -1,0 +1,32 @@
+Steps to SSH from host to guest.
+
+1. Get the host ip address
+$ip addr show
+
+2. Try to ping from guest terminal to see its working.
+$ping 192.168.1.145
+
+3. Check if SSH service is running on the guest. 
+$netstat -lnpt | grep 22
+netstat --> network statistics
+l --> display listening server sockets
+n --> numeric
+p --> PID/program for sockets
+t --> tcp
+port 22 is for SSH
+it should show
+tcp   0  0  0.0.0.0:22  0.0.0.0:*  LISTEN  -
+
+4. Can do SSH in guest itself with itself
+$ssh 127.0.0.1
+
+5. Check if port 22 is blocked in firewall/iptables.
+$iptables -nvL INPUT
+
+6. Following command fixes, if internet is not working in host machine.
+$sudo dfhclient -v
+
+7. First ping from guest. If it is working then connect using ssh
+$ping 192.168.1.145
+$ssh 192.168.1.145
+
