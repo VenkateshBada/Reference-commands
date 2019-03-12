@@ -30,3 +30,7 @@ $sudo dhclient -v
 $ping 192.168.1.145
 $ssh 192.168.1.145
 
+Steps to call host from guest using http.
+
+1. $yum install httpd
+2. $/sbin/service httpd start
