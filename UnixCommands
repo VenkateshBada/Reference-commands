@@ -24,7 +24,7 @@ $ssh 127.0.0.1
 $iptables -nvL INPUT
 
 6. Following command fixes, if internet is not working in host machine.
-$sudo dfhclient -v
+$sudo dhclient -v
 
 7. First ping from guest. If it is working then connect using ssh
 $ping 192.168.1.145
